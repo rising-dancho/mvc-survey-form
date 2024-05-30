@@ -43,10 +43,35 @@ export function useFormModel() {
     });
   }
 
+  // PAGE 4
+  const resetForm = () => {
+    setFormData({
+      basicInfo: {
+        name: '',
+        birthday: '',
+        address: '',
+        email: '',
+        phone: '',
+        height: '',
+        weight: '',
+      },
+      medicalHistory: {
+        drinkAlcohol: false,
+        alcoholFrequency: '',
+        smoke: false,
+        smokeFrequency: '',
+        bloodType: '',
+        previousConditions: '',
+      },
+      familyRelations: [],
+    });
+  };
+
   return {
     formData,
     updateBasicInfo,
     updateMedicalHistory,
     addFamilyRelation,
+    resetForm,
   };
 }
