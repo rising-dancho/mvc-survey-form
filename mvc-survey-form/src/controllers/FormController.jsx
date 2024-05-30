@@ -17,9 +17,10 @@ function FormController() {
   // Pagination
   const [step, setStep] = useState(1);
   const totalSteps = 4;
+  const stepBack = 1;
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, totalSteps));
-  const previousStep = () => setStep((prev) => Math.max(prev - 1, 1));
+  const previousStep = () => setStep((prev) => Math.max(prev - 1, stepBack));
 
   return (
     <div>
@@ -28,6 +29,7 @@ function FormController() {
           data={formData.basicInfo}
           onChange={updateBasicInfo}
           onNext={nextStep}
+          onPrevious={previousStep}
         />
       )}
       {step === 2 && (
@@ -35,6 +37,7 @@ function FormController() {
           data={formData.medicalHistory}
           onChange={updateMedicalHistory}
           onNext={nextStep}
+          onPrevious={previousStep}
         />
       )}
       {step === 3 && (
@@ -42,6 +45,7 @@ function FormController() {
           data={formData.familyRelations}
           onAddRelation={addFamilyRelation}
           onNext={nextStep}
+          onPrevious={previousStep}
         />
       )}
       {step === 4 && (
