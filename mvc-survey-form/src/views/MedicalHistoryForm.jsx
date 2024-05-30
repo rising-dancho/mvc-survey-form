@@ -15,6 +15,7 @@ function MedicalHistoryForm({ data, onChange, onNext, onPrevious }) {
         name="bloodType"
         value={data.bloodType}
         onChange={handleChange}
+        autoFocus
       />
       <div className="label">Other previous conditions</div>
       <textarea

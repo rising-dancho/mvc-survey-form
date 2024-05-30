@@ -32,6 +32,7 @@ function FamilyRelationsForm({ data, onAddRelation, onNext, onPrevious }) {
         name="name"
         value={relation.name}
         onChange={handleChange}
+        autoFocus
       />
       <div className="label">Relationship</div>
       <input
@@ -48,7 +49,7 @@ function FamilyRelationsForm({ data, onAddRelation, onNext, onPrevious }) {
         onChange={handleChange}
       />
       <button onClick={handleAdd}>Add Family Member</button>
-      <div className='btns-wrapper'>
+      <div className="btns-wrapper">
         <button onClick={onPrevious}>Previous</button>
         <button onClick={onNext}>Next</button>
       </div>

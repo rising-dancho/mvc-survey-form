@@ -13,6 +13,7 @@ function BasicInfoForm({ data, onChange, onNext }) {
         name="name"
         value={data.name}
         onChange={handleChange}
+        autoFocus
       />
       <div className="label">Birthday</div>
       <input
