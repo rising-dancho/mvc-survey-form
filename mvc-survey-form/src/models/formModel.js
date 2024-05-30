@@ -19,15 +19,24 @@ export function useFormModel() {
       bloodType: '',
       previousConditions: '',
     },
-    familyRelations: [],
   });
 
-  const updateBasicInfo = (info) => {
+  // PAGE 1
+  function updateBasicInfo(info) {
     setFormData({ ...formData, basicInfo: { ...formData.basicInfo, ...info } });
-  };
+  }
+
+  // PAGE 2
+  function updateMedicalHistory(history) {
+    setFormData({
+      ...formData,
+      medicalHistory: { ...formData.medicalHistory, ...history },
+    });
+  }
 
   return {
     formData,
     updateBasicInfo,
+    updateMedicalHistory,
   };
 }

@@ -1,12 +1,18 @@
 import React from 'react';
-import BasicInfoForm from '../views/BasicInfoForm';
 import { useFormModel } from '../models/formModel';
+import BasicInfoForm from '../views/BasicInfoForm';
+import MedicalHistoryForm from '../views/MedicalHistoryForm';
 
 function FormController() {
-  const { formData, updateBasicInfo } = useFormModel();
+  const { formData, updateBasicInfo, updateMedicalHistory } = useFormModel();
+
   return (
     <div>
       <BasicInfoForm data={formData.basicInfo} onChange={updateBasicInfo} />
+      <MedicalHistoryForm
+        data={formData.medicalHistory}
+        onChange={updateMedicalHistory}
+      />
     </div>
   );
 }
