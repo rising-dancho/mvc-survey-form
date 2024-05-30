@@ -1,5 +1,11 @@
+import FormController from './controllers/FormController';
+
 function App() {
-  return <h1>Happy Coding 🚀</h1>;
+  return (
+    <div className="app-container">
+      <FormController />
+    </div>
+  );
 }
 
 export default App;
