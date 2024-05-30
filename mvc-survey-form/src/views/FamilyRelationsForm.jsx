@@ -18,7 +18,7 @@ function FamilyRelationsForm({ data, onAddRelation, onNext, onPrevious }) {
 
   return (
     <div>
-      <h2>Family Relations</h2>
+      <h2>Family Relations: </h2>
       {data.map((rel, index) => (
         <div key={index}>
           <p>
@@ -26,30 +26,32 @@ function FamilyRelationsForm({ data, onAddRelation, onNext, onPrevious }) {
           </p>
         </div>
       ))}
+      <div className="label">Name</div>
       <input
         type="text"
         name="name"
         value={relation.name}
         onChange={handleChange}
-        placeholder="Name"
       />
+      <div className="label">Relationship</div>
       <input
         type="text"
         name="relationship"
         value={relation.relationship}
         onChange={handleChange}
-        placeholder="Relationship"
       />
+      <div className="label">Age</div>
       <input
         type="number"
         name="age"
         value={relation.age}
         onChange={handleChange}
-        placeholder="Age"
       />
       <button onClick={handleAdd}>Add Family Member</button>
-      <button onClick={onPrevious}>Previous</button>
-      <button onClick={onNext}>Next</button>
+      <div className='btns-wrapper'>
+        <button onClick={onPrevious}>Previous</button>
+        <button onClick={onNext}>Next</button>
+      </div>
     </div>
   );
 }

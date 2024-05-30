@@ -2,7 +2,8 @@ import FormController from './controllers/FormController';
 
 function App() {
   return (
-    <div className="app-container">
+    <div className="container">
+      <header>Survey Form</header>
       <FormController />
     </div>
   );

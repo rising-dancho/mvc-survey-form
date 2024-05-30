@@ -7,16 +7,32 @@ function MedicalHistoryForm({ data, onChange, onNext, onPrevious }) {
   }
   return (
     <div>
-      <h2>Medical History</h2>
-      <label>
+      <h2>Medical History: </h2>
+
+      <div className="label">Blood Type</div>
+      <input
+        type="text"
+        name="bloodType"
+        value={data.bloodType}
+        onChange={handleChange}
+      />
+      <div className="label">Other previous conditions</div>
+      <textarea
+        name="previousConditions"
+        value={data.previousConditions}
+        onChange={handleChange}
+      />
+
+      <div className="label questions-wrapper">
         Do you drink alcohol?
         <input
+          className="checkbox"
           type="checkbox"
           name="drinkAlcohol"
           checked={data.drinkAlcohol}
           onChange={handleChange}
         />
-      </label>
+      </div>
       {data.drinkAlcohol && (
         <textarea
           name="alcoholFrequency"
@@ -25,15 +41,17 @@ function MedicalHistoryForm({ data, onChange, onNext, onPrevious }) {
           placeholder="How often?"
         />
       )}
-      <label>
+
+      <div className="label questions-wrapper">
         Do you smoke?
         <input
+          className="checkbox"
           type="checkbox"
           name="smoke"
           checked={data.smoke}
           onChange={handleChange}
         />
-      </label>
+      </div>
       {data.smoke && (
         <textarea
           name="smokeFrequency"
@@ -42,21 +60,10 @@ function MedicalHistoryForm({ data, onChange, onNext, onPrevious }) {
           placeholder="How often?"
         />
       )}
-      <input
-        type="text"
-        name="bloodType"
-        value={data.bloodType}
-        onChange={handleChange}
-        placeholder="Blood Type"
-      />
-      <textarea
-        name="previousConditions"
-        value={data.previousConditions}
-        onChange={handleChange}
-        placeholder="Other previous conditions"
-      />
-      <button onClick={onPrevious}>Previous</button>
-      <button onClick={onNext}>Next</button>
+      <div className="btns-wrapper">
+        <button onClick={onPrevious}>Previous</button>
+        <button onClick={onNext}>Next</button>
+      </div>
     </div>
   );
 }

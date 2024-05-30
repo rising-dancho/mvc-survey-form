@@ -11,7 +11,7 @@ const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
-nextBtnFirst.addEventListener("click", function(event){
+nextBtnFirst.addEventListener("click", function(event){    
   event.preventDefault();
   slidePage.style.marginLeft = "-25%";
   bullet[current - 1].classList.add("active");
