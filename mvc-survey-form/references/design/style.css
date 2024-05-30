@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 :root {
-  --highlight: #0055A5;
+  --highlight: #019D4E;
   --white: #fff;
   --background: #edf4f4;
 }
@@ -83,7 +83,7 @@ form .page .field button {
   width: 100%;
   height: calc(100% + 5px);
   border: none;
-  background: var(--highlight);
+  background: #000;
   margin-top: -20px;
   border-radius: 5px;
   color: var(--white);
@@ -95,7 +95,7 @@ form .page .field button {
   transition: 0.5s ease;
 }
 form .page .field button:hover {
-  background: #000;
+  background: var(--highlight);
 }
 form .page .btns button {
   margin-top: -20px !important;
