@@ -19,6 +19,7 @@ export function useFormModel() {
       bloodType: '',
       previousConditions: '',
     },
+    familyRelations: [],
   });
 
   // PAGE 1
@@ -34,9 +35,18 @@ export function useFormModel() {
     });
   }
 
+  // PAGE 3
+  function addFamilyRelation(relation) {
+    setFormData({
+      ...formData,
+      familyRelations: [...formData.familyRelations, relation],
+    });
+  }
+
   return {
     formData,
     updateBasicInfo,
     updateMedicalHistory,
+    addFamilyRelation,
   };
 }
