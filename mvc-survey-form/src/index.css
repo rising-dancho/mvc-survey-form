@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   background: var(--background);
-  scale: 95%;
+  scale: 93.45%;
 }
 
 h1 {
@@ -134,10 +134,29 @@ textarea {
 
 .success {
   text-align: center;
+  margin-top: 30px;
 }
 
 .subtitle {
   margin-bottom: 20px;
   margin-top: 30px;
   color: #8b8b8b;
+}
+
+.progress-bar {
+  width: 97%;
+  background-color: #e0e0df;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  margin-top: -20px;
+}
+
+.progress-text {
+  background-color: var(--highlight);
+  color: var(--white);
+  border-radius: 5px;
+}
+
+img {
+  margin-top: 20px;
 }

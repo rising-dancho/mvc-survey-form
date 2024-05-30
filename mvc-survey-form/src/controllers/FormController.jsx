@@ -4,6 +4,7 @@ import BasicInfoForm from '../views/BasicInfoForm';
 import MedicalHistoryForm from '../views/MedicalHistoryForm';
 import FamilyRelationsForm from '../views/FamilyRelationsForm';
 import Confirmation from '../views/Confirmation';
+import ProgressBar from '../views/ProgressBar';
 
 function FormController() {
   const {
@@ -25,36 +26,49 @@ function FormController() {
   return (
     <div>
       {step === 1 && (
-        <BasicInfoForm
-          data={formData.basicInfo}
-          onChange={updateBasicInfo}
-          onNext={nextStep}
-          onPrevious={previousStep}
-        />
+        <div>
+          <ProgressBar step={step} totalSteps={totalSteps} />
+          <BasicInfoForm
+            data={formData.basicInfo}
+            onChange={updateBasicInfo}
+            onNext={nextStep}
+            onPrevious={previousStep}
+          />
+        </div>
       )}
       {step === 2 && (
-        <MedicalHistoryForm
-          data={formData.medicalHistory}
-          onChange={updateMedicalHistory}
-          onNext={nextStep}
-          onPrevious={previousStep}
-        />
+        <div>
+          <ProgressBar step={step} totalSteps={totalSteps} />
+          <MedicalHistoryForm
+            data={formData.medicalHistory}
+            onChange={updateMedicalHistory}
+            onNext={nextStep}
+            onPrevious={previousStep}
+          />
+        </div>
       )}
       {step === 3 && (
-        <FamilyRelationsForm
-          data={formData.familyRelations}
-          onAddRelation={addFamilyRelation}
-          onNext={nextStep}
-          onPrevious={previousStep}
-        />
+        <div>
+          <ProgressBar step={step} totalSteps={totalSteps} />
+          <FamilyRelationsForm
+            data={formData.familyRelations}
+            onAddRelation={addFamilyRelation}
+            onNext={nextStep}
+            onPrevious={previousStep}
+          />
+        </div>
       )}
       {step === 4 && (
-        <Confirmation
-          onReset={() => {
-            resetForm();
-            setStep(1);
-          }}
-        />
+        <div>
+          <Confirmation
+            onReset={() => {
+              resetForm();
+              setStep(1);
+            }}
+            step={step}
+            totalSteps={totalSteps}
+          />
+        </div>
       )}
     </div>
   );

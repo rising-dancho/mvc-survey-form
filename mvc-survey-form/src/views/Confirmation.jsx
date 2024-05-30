@@ -1,12 +1,14 @@
 import React from 'react';
-import success from '../images/success.png';
+import success from './image/success.png';
+import ProgressBar from '../views/ProgressBar';
 
-function Confirmation({ onReset }) {
+function Confirmation({ onReset, step, totalSteps }) {
   return (
     <div>
-      <img src={success} alt="success" />
+      <ProgressBar step={step} totalSteps={totalSteps} />
       <h2 className="success">All done!</h2>
-      <p className="subtitle">Your form has been successfully submitted</p>
+      <img src={success} alt="success" />
+      <p className="subtitle">Your form has been successfully submitted.  </p>
       <button onClick={onReset}>Okay </button>
     </div>
   );

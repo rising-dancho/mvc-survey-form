@@ -1,4 +1,4 @@
-import FormController from './controllers/FormController';
+import FormController from './controllers/formController';
 
 function App() {
   return (
